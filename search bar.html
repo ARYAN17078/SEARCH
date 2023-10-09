@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<div class="container-fluid text-white py-5" style="background-color: #1d2630;">
+    <h1 class="text-center">Search/Filter Engine</h1>
+    <h5 class="text-center">Search For Any Member</h5>
+</div>    
+
+<div class="container col-6 mt-5">
+    <input type="text" class="form-control mb-5 p-3" placeholder="Search Here...." id="search-input">
+    <ul class="list-group list-group-flush text-primary h5"><li></li>
+    <li class= "list-group-item p-3"><a href="ARGENTINA.html">ARGENTINA</a></li>
+    <li class= "list-group-item p-3"><a href="African Union.html">AFRICAN UNION</a></li>
+    <li class= "list-group-item p-3"><a href="Australia.html">AUSTRALIA</a></li>
+    <li class= "list-group-item p-3"><a href="Brazil.html">BRAZIL</a></li>
+    <li class= "list-group-item p-3"><a href="Canada.html">CANADA</a></li>
+    <li class= "list-group-item p-3"><a href="China.html">CHINA</a></li>
+    <li class= "list-group-item p-3"><a href="European Union.html">EUROPEAN UNION</a></li>
+    <li class= "list-group-item p-3"><a href="France.html">FRANCE</a></li>
+    <li class= "list-group-item p-3"><a href="Indonesia.html">INDONESIA</a></li>
+    <li class= "list-group-item p-3"><a href="Italy.html">ITALY</a></li>
+    <li class= "list-group-item p-3"><a href="Japan.html">JAPAN</a></li>
+    <li class= "list-group-item p-3"><a href="Mexico.html">MEXICO</a></li>
+    <li class= "list-group-item p-3"><a href="Republic of India.html">REPUBLIC OF INDIA</a></li>
+    <li class= "list-group-item p-3"><a href="Republic of Korea.html">REPUBLIC OF KOREA</a></li>
+    <li class= "list-group-item p-3"><a href="Russia.html">RUSSIA</a></li>
+    <li class= "list-group-item p-3"><a href="Saudi Arabia.html">SAUDI ARABIA</a></li>
+    <li class= "list-group-item p-3"><a href="South Africa.html">SOUTH AFRICA</a></li>
+    <li class= "list-group-item p-3"><a href="Turkiye.html">TÜRKIYE</a></li>
+    <li class= "list-group-item p-3"><a href="United Kingdom.html">UNITED KINGDOM</a></li>
+    <li class= "list-group-item p-3"><a href="United States.html">UNITED STATES</a></li>
+    </ul>
+</div>
+</body>
+
+<script>
+    document.querySelector('#search-input').addEventListener('input', filterlist);
+    function filterlist(){
+        const searchInput= document.querySelector('#search-input');
+        const filter = searchInput.value.toLowerCase();
+        const listItems = document.querySelectorAll('.list-group-item');
+
+        listItems.forEach((item) =>{
+            let text = item.textContent;
+            if(text.toLocaleLowerCase().includes(filter.toLowerCase())){
+                item.style.display = '';}
+            else(
+                item.style.display = 'none' 
+            )  
+        });
+    } 
+</script>
+</html>
